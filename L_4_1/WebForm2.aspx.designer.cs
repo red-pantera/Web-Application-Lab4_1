@@ -10,7 +10,7 @@
 namespace L_4_1 {
     
     
-    public partial class WebForm11 {
+    public partial class WebForm1 {
         
         /// <summary>
         /// form1 элемент управления.
@@ -31,22 +31,13 @@ namespace L_4_1 {
         protected global::System.Web.UI.WebControls.Panel Panel1;
         
         /// <summary>
-        /// RadioButtonList1 элемент управления.
-        /// </summary>
-        /// <remarks>
-        /// Автоматически создаваемое поле.
-        /// Для изменения переместите объявление поля из файла конструктора в файл кода программной части.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.RadioButtonList RadioButtonList1;
-        
-        /// <summary>
         /// pizzaTexas элемент управления.
         /// </summary>
         /// <remarks>
         /// Автоматически создаваемое поле.
         /// Для изменения переместите объявление поля из файла конструктора в файл кода программной части.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.ListItem pizzaTexas;
+        protected global::System.Web.UI.WebControls.CheckBox pizzaTexas;
         
         /// <summary>
         /// pizzaCheese элемент управления.
@@ -55,7 +46,7 @@ namespace L_4_1 {
         /// Автоматически создаваемое поле.
         /// Для изменения переместите объявление поля из файла конструктора в файл кода программной части.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.ListItem pizzaCheese;
+        protected global::System.Web.UI.WebControls.CheckBox pizzaCheese;
         
         /// <summary>
         /// pizzaKarbonara элемент управления.
@@ -64,7 +55,7 @@ namespace L_4_1 {
         /// Автоматически создаваемое поле.
         /// Для изменения переместите объявление поля из файла конструктора в файл кода программной части.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.ListItem pizzaKarbonara;
+        protected global::System.Web.UI.WebControls.CheckBox pizzaKarbonara;
         
         /// <summary>
         /// pizzaBarbecue элемент управления.
@@ -73,7 +64,7 @@ namespace L_4_1 {
         /// Автоматически создаваемое поле.
         /// Для изменения переместите объявление поля из файла конструктора в файл кода программной части.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.ListItem pizzaBarbecue;
+        protected global::System.Web.UI.WebControls.CheckBox pizzaBarbecue;
         
         /// <summary>
         /// Panel2 элемент управления.

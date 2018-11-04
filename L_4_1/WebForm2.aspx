@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="WebForm1.aspx.cs" Inherits="L_4_1.WebForm11" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="WebForm2.aspx.cs" Inherits="L_4_1.WebForm1" %>
 
 <!DOCTYPE html>
 
@@ -7,10 +7,6 @@
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
     <title>Замовлення піци</title>
     <style type="text/css">
-        body {
-            background-color: beige;
-            padding: 5px;
-        }
         .auto-style1 {
             position: absolute;
             top: 255px;
@@ -34,7 +30,6 @@
             height: 260px;
             margin-left: 15px;
             margin-bottom: 60px;
-            padding: 5px;
         }
         .auto-style5 {
             position: absolute;
@@ -68,12 +63,10 @@
             <asp:Panel ID="Panel1" runat="server" CssClass="auto-style5">
                 <asp:Label runat="server">Виберіть сорт піци</asp:Label>
                 <br />
-                <asp:RadioButtonList ID="RadioButtonList1" runat="server">
-                    <asp:ListItem ID="pizzaTexas" runat="server" Value="PTexas" Text="Техас"></asp:ListItem>
-                    <asp:ListItem ID="pizzaCheese" runat="server" Value="PCheese" Text="Чотири сири"></asp:ListItem>
-                    <asp:ListItem ID="pizzaKarbonara" runat="server" Value="PKarbonara" Text="Карбонара"></asp:ListItem>
-                    <asp:ListItem ID="pizzaBarbecue" runat="server" Value="PBarbecue" Text="Барбекю"></asp:ListItem>
-                </asp:RadioButtonList>
+                <asp:CheckBox ID="pizzaTexas" runat="server" Text="Техас" /><br />
+                <asp:CheckBox ID="pizzaCheese" runat="server" Text="Чотири сири" /><br />
+                <asp:CheckBox ID="pizzaKarbonara" runat="server" Text="Карбонара" /><br />
+                <asp:CheckBox ID="pizzaBarbecue" runat="server" Text="Барбекю" />
             </asp:Panel>
             
             <asp:Panel ID="Panel2" runat="server" CssClass="auto-style3">
@@ -97,13 +90,13 @@
             <asp:Panel ID="Panel4" runat="server" CssClass="auto-style6">
                 <asp:Label runat="server">Ціна</asp:Label>
                 <br />
-                <asp:Label ID="pizzaTexasPrice" runat="server" Text="" /><br />
-                <asp:Label ID="pizzaCheesePrice" runat="server" Text="" /><br />
-                <asp:Label ID="pizzaKarbonaraPrice" runat="server" Text="" /><br />
-                <asp:Label ID="pizzaBarbecuePrice" runat="server" Text="" />
+                <asp:Label ID="pizzaTexasPrice" runat="server" Text="0" /><br />
+                <asp:Label ID="pizzaCheesePrice" runat="server" Text="0" /><br />
+                <asp:Label ID="pizzaKarbonaraPrice" runat="server" Text="0" /><br />
+                <asp:Label ID="pizzaBarbecuePrice" runat="server" Text="0" />
             </asp:Panel>
             <asp:Button ID="Button" style="margin-top: 2px;"  runat="server" Text="Розрахувати" OnClick="Button1_Click" CssClass="auto-style1" />
-            <h2>&nbsp;Ваше замовлення</h2>
+            <h2>Ваше замовлення</h2>
 
             </div>
        <div class="auto-style7">

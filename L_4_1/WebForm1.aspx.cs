@@ -7,7 +7,7 @@ using System.Web.UI.WebControls;
 
 namespace L_4_1
 {
-    public partial class WebForm1 : System.Web.UI.Page
+    public partial class WebForm11 : System.Web.UI.Page
     {
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -15,8 +15,8 @@ namespace L_4_1
         }
         protected void Button1_Click(object sender, EventArgs e)
         {
-            SUM.Text = "";
             Discount.Text = "";
+            SUM.Text = "";
             int countTexas = int.Parse(pizzaTexasCount.Text);
             int countCheese = int.Parse(pizzaCheeseCount.Text);
             int countKarbonara = int.Parse(pizzaKarbonaraCount.Text);
@@ -27,46 +27,56 @@ namespace L_4_1
             int KarbonaraPrice1 = int.Parse(pizzaKarbonaraPrice1.Text);
             int BarbecuePrice1 = int.Parse(pizzaBarbecuePrice1.Text);
 
-            if (pizzaTexas.Checked)
-            {
-                pizzaTexasPrice.Text = (countTexas * TexasPrice1).ToString();
-            }
-            else { pizzaTexasPrice.Text = (0 * TexasPrice1).ToString(); }
-
-            if (pizzaCheese.Checked)
-            {
-                pizzaCheesePrice.Text = (countCheese * CheesePrice1).ToString();
-            }
-            else { pizzaCheesePrice.Text = (0 * CheesePrice1).ToString(); }
-
-            if (pizzaKarbonara.Checked)
-            {
-                pizzaKarbonaraPrice.Text = (countKarbonara * KarbonaraPrice1).ToString();
-            }
-            else { pizzaKarbonaraPrice.Text = (0 * KarbonaraPrice1).ToString(); }
-
-            if (pizzaBarbecue.Checked)
-            {
-               pizzaBarbecuePrice.Text = (countBarbecue * BarbecuePrice1).ToString();
-            }
-            else { pizzaBarbecuePrice.Text = (0 * BarbecuePrice1).ToString(); }
+            pizzaTexasPrice.Text = (countTexas * TexasPrice1).ToString();
+            pizzaCheesePrice.Text = (countCheese * CheesePrice1).ToString();
+            pizzaKarbonaraPrice.Text = (countKarbonara * KarbonaraPrice1).ToString();
+            pizzaBarbecuePrice.Text = (countBarbecue * BarbecuePrice1).ToString();
 
             int Texas = int.Parse(pizzaTexasPrice.Text);
             int Cheese = int.Parse(pizzaCheesePrice.Text);
             int Karbonara = int.Parse(pizzaKarbonaraPrice.Text);
             int Barbecue = int.Parse(pizzaBarbecuePrice.Text);
 
-            int PRICE = Texas + Cheese + Karbonara + Barbecue;
+            int PRICE = 0;
 
 
-            if ((countTexas + countCheese + countKarbonara + countBarbecue) > 20)
+            if (RadioButtonList1.SelectedItem != null)
             {
-                PRICE = ((Texas + Cheese + Karbonara + Barbecue) * 90) / 100;
-                Discount.Text = "знижка 10% від більше ніж 20 замовлень";
+                PRICE = Texas;
+                IsDiscount(countTexas);
+                SUM.Text += PRICE.ToString() + " грн";
             }
 
-            SUM.Text += PRICE.ToString() + " грн";
+            if (RadioButtonList1.SelectedItem != null)
+            {
+                PRICE = Cheese;
+                IsDiscount(countCheese);
+                SUM.Text += PRICE.ToString() + " грн";
+            }
 
+            if (RadioButtonList1.SelectedItem != null)
+            {
+                PRICE = Karbonara;
+                IsDiscount(countKarbonara);
+                SUM.Text += PRICE.ToString() + " грн";
+            }
+
+            if (RadioButtonList1.SelectedItem != null)
+            {
+                PRICE = Barbecue;
+                IsDiscount(countBarbecue);
+                SUM.Text += PRICE.ToString() + " грн";
+            }
+
+
+            void IsDiscount(int numberOfPizzas)
+            {
+                if (numberOfPizzas > 20)
+                {
+                    PRICE = (PRICE * 90) / 100;
+                    Discount.Text = "знижка 10% від більше ніж 20 замовлень";
+                }
+            }
         }
     }
 }
